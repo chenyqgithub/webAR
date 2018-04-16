@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<!-- include A-Frame obviously -->
+<script src="/static/js/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="/static/js/aframe-ar.js"></script>
+<!-- include A-Frame-Extras -->
+<!--<script src="/static/js/aframe-extras.min.js"></script>-->
+
+<body style='margin : 0px; overflow: hidden;'>
+<a-scene embedded arjs>
+    <!-- load gltf model -->
+    <a-marker preset='custom' type='pattern' url='/static/marker/pattern-marker.patt'>
+
+        <a-entity obj-model="obj: url(../obj/bird/bird.obj); mtl: url(../obj/bird/bird.mtl)"
+                  scale="0.01 0.01 0.01"
+                  rotation="160 180 -50"
+                  position="0 0 -0"
+        >
+            <a-entity position="0 0 0"></a-entity>
+            <a-animation attribute="rotation"
+                         dur="50000"
+                         fill="forwards"
+                         to="0 960 0"
+                         repeat="indefinite"></a-animation>
+        </a-entity>
+    </a-marker>
+    <!-- add camera -->
+    <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>

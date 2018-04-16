@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!-- include A-Frame obviously -->
+<script src="/static/js/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<!--<script src="/static/js/aframe-ar.js"></script>-->
+<!-- include A-Frame-Extras -->
+<!--<script src="/static/js/aframe-extras.min.js"></script>-->
+
+<body >
+<a-scene>
+    <a-assets>
+        <img id="sky" src="39673120200_ee07ed752a_o.jpg">
+    </a-assets>
+    <a-sky src="#sky">
+
+        <a-entity obj-model="obj: url(../obj/house/cathedral.obj); mtl: url(../obj/house/cathedral.mtl)"
+                  scale="0.2 0.2 0.2"
+                  position = "1 0 3"
+        >
+            <a-entity position="0 0 0"></a-entity>
+            <a-animation attribute="rotation"
+                         dur="50000"
+                         fill="forwards"
+                         to="0 960 0"
+                         repeat="indefinite"></a-animation>
+        </a-entity>
+
+    </a-sky>
+    <!-- Red directional light shining from the top left. -->
+    <!--<a-light color="red" position="-1 1 0"></a-light>-->
+
+    <!-- Blue point light, 5 meters in the air. -->
+    <!--<a-light type="point" color="blue" position="0 5 0"></a-light>-->
+
+    <!-- Dim ambient lighting. -->
+    <!--<a-light type="ambient" color="#222"></a-light>-->
+</a-scene>
+</body>
+</html>
